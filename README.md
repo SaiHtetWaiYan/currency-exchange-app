@@ -4,9 +4,11 @@ Welcome to the Currency Exchange App! This app allows you to calculate currency 
 
 ## Technologies Used
 
-- **Next.js**: The React framework for building efficient server-side-rendered web applications.
-- **React.js**: A JavaScript library for building user interfaces.
-- **TypeScript**: A typed superset of JavaScript that adds static types to your code.
+- **Next.js:** React framework for building efficient server-side-rendered web applications.
+- **React.js:** JavaScript library for building user interfaces.
+- **TypeScript:** Typed superset of JavaScript that adds static types to your code.
+- **Tailwind CSS:** Utility-first CSS framework for rapidly building custom designs.
+- **Shadcn UI:** (Assuming you meant "Shadcn UI") UI library for enhancing the app's user interface.
 
 ## App Details
 
