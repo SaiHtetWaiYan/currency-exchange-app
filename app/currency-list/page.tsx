@@ -24,6 +24,7 @@ export default async function CurrencyListPage() {
                 <TableHead className="text-center font-medium">
                   Currency
                 </TableHead>
+                <TableHead className="text-center font-medium">Value</TableHead>
                 <TableHead className="text-center font-medium">Rate</TableHead>
               </TableRow>
             </TableHeader>
@@ -32,6 +33,17 @@ export default async function CurrencyListPage() {
               {Object.entries(data.rates).map(([currency, rate]) => (
                 <TableRow key={currency}>
                   <TableCell className="text-center">{currency}</TableCell>
+                  {currency === "JPY" ||
+                  currency === "KHR" ||
+                  currency === "IDR" ||
+                  currency === "KRW" ||
+                  currency === "LAK" ||
+                  currency === "VND" ? (
+                    <TableCell className="text-center">100/-=K</TableCell>
+                  ) : (
+                    <TableCell className="text-center">1/-=K</TableCell>
+                  )}
+
                   <TableCell className="text-center">
                     {String(rate)} &nbsp; Kyats
                   </TableCell>

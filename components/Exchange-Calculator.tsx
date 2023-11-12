@@ -15,7 +15,18 @@ const ExchangeCalculator = ({ data }: any) => {
   const [amount, setAmount] = useState<number>(0);
   const onChange = (value: string) => {
     setSelectedCurrency(value);
-    setRate(parseFloat(data.rates[value].replace(/,/g, "")));
+    if (
+      value === "JPY" ||
+      value === "KHR" ||
+      value === "IDR" ||
+      value === "KRW" ||
+      value === "LAK" ||
+      value === "VND"
+    ) {
+      setRate(parseFloat(data.rates[value].replace(/,/g, "")) / 100);
+    } else {
+      setRate(parseFloat(data.rates[value].replace(/,/g, "")));
+    }
   };
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
