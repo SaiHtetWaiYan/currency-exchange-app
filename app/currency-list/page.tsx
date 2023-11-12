@@ -15,9 +15,10 @@ export default async function CurrencyListPage() {
   return (
     <main className="py-4">
       <section className="py-12 px-24 flex flex-col items-center text-center gap-8">
-        <Table>
-          <TableCaption>{data.info}</TableCaption>
-          <ScrollArea className="h-[480px] w-full ">
+        <ScrollArea className="h-[480px] w-full ">
+          <Table>
+            <TableCaption>{data.info}</TableCaption>
+
             <TableHeader>
               <TableRow>
                 <TableHead className="text-center font-medium">
@@ -32,13 +33,13 @@ export default async function CurrencyListPage() {
                 <TableRow key={currency}>
                   <TableCell className="text-center">{currency}</TableCell>
                   <TableCell className="text-center">
-                    {rate} &nbsp; Kyats
+                    {String(rate)} &nbsp; Kyats
                   </TableCell>
                 </TableRow>
               ))}
             </TableBody>
-          </ScrollArea>
-        </Table>
+          </Table>
+        </ScrollArea>
       </section>
     </main>
   );
