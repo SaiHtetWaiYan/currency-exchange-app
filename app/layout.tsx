@@ -29,7 +29,7 @@ export default function RootLayout({
 
           <div className="container px-5 py-4 mx-auto">
             <p className="text-sm mt-8 capitalize xl:text-center">
-              © 2020 All rights reserved{" "}
+              © 2023 All rights reserved{" "}
             </p>
           </div>
         </ThemeProvider>
