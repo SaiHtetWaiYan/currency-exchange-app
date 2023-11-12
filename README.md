@@ -50,3 +50,7 @@ To explore the app locally, follow these steps:
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action.
 
 Enjoy exploring the Currency Exchange App! If you have any questions or feedback, feel free to reach out.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
