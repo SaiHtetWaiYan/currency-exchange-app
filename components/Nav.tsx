@@ -27,7 +27,7 @@ export default function Nav() {
           >
             Currency list
           </Link>
-          <Link
+          {/* <Link
             href="/about-us"
             className={`text-md font-medium transition-colors hover:text-primary ${
               pathname === "/about-us"
@@ -46,7 +46,7 @@ export default function Nav() {
             }`}
           >
             Contact Us
-          </Link>
+          </Link> */}
           <ModeToggle />
         </nav>
       </div>
