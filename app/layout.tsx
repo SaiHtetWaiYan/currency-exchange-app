@@ -28,7 +28,7 @@ export default function RootLayout({
           {children}
 
           <div className="container px-5 py-4 mx-auto">
-            <p className="text-sm mt-8 capitalize xl:text-center">
+            <p className="text-sm mt-8 capitalize text-center">
               © 2023 All rights reserved{" "}
             </p>
           </div>

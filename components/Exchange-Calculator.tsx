@@ -24,15 +24,15 @@ const ExchangeCalculator = ({ data }: any) => {
     }
   };
   return (
-    <Card className="w-1/2">
+    <Card className="sm:w-full md:w-1/2">
       <CardHeader>
         <CardTitle className="text-center">Exchange Calculator</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="flex gap-2">
-          <div className="w-1/2">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <div className="sm:w-full md:w-1/2">
             <Select name="currency" onValueChange={onChange}>
-              <SelectTrigger className="w-full ">
+              <SelectTrigger className="w-full">
                 <SelectValue placeholder="Currency" />
               </SelectTrigger>
 
@@ -45,7 +45,7 @@ const ExchangeCalculator = ({ data }: any) => {
               </SelectContent>
             </Select>
           </div>
-          <div className=" w-1/2">
+          <div className="sm:w-full md:w-1/2">
             <Input
               value={amount}
               onChange={handleChange}
