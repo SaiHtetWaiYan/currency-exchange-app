@@ -14,8 +14,8 @@ const ExchangeCalculator = ({ data }: any) => {
   const [rate, setRate] = useState<number>(0);
   const [amount, setAmount] = useState<number>(0);
   const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCurrency(event);
-    setRate(parseFloat(data.rates[event].replace(/,/g, "")));
+    setSelectedCurrency(String(event));
+    setRate(parseFloat(data.rates[String(event)].replace(/,/g, "")));
   };
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
