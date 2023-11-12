@@ -13,9 +13,9 @@ const ExchangeCalculator = ({ data }: any) => {
   const [selectedCurrency, setSelectedCurrency] = useState<String>();
   const [rate, setRate] = useState<number>(0);
   const [amount, setAmount] = useState<number>(0);
-  const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCurrency(String(event));
-    setRate(parseFloat(data.rates[String(event)].replace(/,/g, "")));
+  const onChange = (value: string) => {
+    setSelectedCurrency(value);
+    setRate(parseFloat(data.rates[value].replace(/,/g, "")));
   };
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
@@ -31,7 +31,7 @@ const ExchangeCalculator = ({ data }: any) => {
       <CardContent>
         <div className="flex gap-2">
           <div className="w-1/2">
-            <Select name="currency" onValueChange={selectChange}>
+            <Select name="currency" onValueChange={onChange}>
               <SelectTrigger className="w-full ">
                 <SelectValue placeholder="Currency" />
               </SelectTrigger>
