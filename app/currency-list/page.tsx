@@ -1,24 +1,31 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
 import getData from "@/lib/api";
 
 export default async function CurrencyListPage() {
   const data = await getData();
+  const timestamp = data.timestamp * 1000;
+  const date = new Date(timestamp);
+  const day = new Intl.DateTimeFormat("en", { day: "numeric" }).format(date);
+  const month = new Intl.DateTimeFormat("en", { month: "long" }).format(date);
+  const year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+
+  const formattedDate = `${day}th ${month} ${year}`;
+
   return (
     <main className="py-4">
       <section className="py-12 px-24 flex flex-col items-center text-center gap-8">
+        <p className="text-2xl text-muted-foreground">{formattedDate}</p>
         <ScrollArea className="h-[480px] w-full ">
           <Table>
-            <TableCaption>{data.info}</TableCaption>
-
             <TableHeader>
               <TableRow>
                 <TableHead className="text-center font-medium">
