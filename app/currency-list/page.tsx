@@ -22,7 +22,7 @@ export default async function CurrencyListPage() {
 
   return (
     <main className="py-4">
-      <section className="py-12 px-24 flex flex-col items-center text-center gap-8">
+      <section className="py-12 md:px-24 flex flex-col items-center text-center gap-8">
         <p className="text-2xl text-muted-foreground">{formattedDate}</p>
         <ScrollArea className="h-[480px] w-full ">
           <Table>
