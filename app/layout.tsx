@@ -30,7 +30,7 @@ export default function RootLayout({
           <div className="container px-5 py-4 mx-auto">
             <p className="text-sm mt-8 capitalize text-center">
               © 2023 All rights reserved by{" "}
-              <a href="https://github.com/SaiHtetWaiYan" target="_blank">
+              <a href="https://saihtet.netlify.app/" target="_blank">
                 Sai Htet Wai Yan.
               </a>
             </p>

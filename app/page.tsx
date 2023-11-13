@@ -1,7 +1,7 @@
 import ExchangeCalculator from "@/components/Exchange-Calculator";
-import getData from "@/lib/api";
+import { latestData } from "@/lib/api";
 export default async function Home() {
-  const data = await getData();
+  const data = await latestData();
   const timestamp = data.timestamp * 1000;
   const date = new Date(timestamp);
   const day = new Intl.DateTimeFormat("en", { day: "numeric" }).format(date);
