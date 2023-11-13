@@ -63,7 +63,7 @@ export default function CurrencyListPage() {
               </TableRow>
             </TableHeader>
 
-            <TableBody>
+            {/* <TableBody>
               {data && data.rates && Object.entries(data.rates).length > 0 ? (
                 Object.entries(data.rates).map(([currency, rate]) => (
                   <TableRow key={currency}>
@@ -90,6 +90,28 @@ export default function CurrencyListPage() {
                   </TableCell>
                 </TableRow>
               )}
+            </TableBody> */}
+            <TableBody>
+              {data &&
+                data.rates &&
+                Object.entries(data.rates).map(([currency, rate]) => (
+                  <TableRow key={currency}>
+                    <TableCell className="text-center">{currency}</TableCell>
+                    {currency === "JPY" ||
+                    currency === "KHR" ||
+                    currency === "IDR" ||
+                    currency === "KRW" ||
+                    currency === "LAK" ||
+                    currency === "VND" ? (
+                      <TableCell className="text-center">100/-=K</TableCell>
+                    ) : (
+                      <TableCell className="text-center">1/-=K</TableCell>
+                    )}
+                    <TableCell className="text-center">
+                      {String(rate)} &nbsp; Kyats
+                    </TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
         </ScrollArea>
