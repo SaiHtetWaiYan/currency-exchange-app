@@ -12,7 +12,7 @@ Welcome to the Currency Exchange App! This app allows you to calculate currency 
 
 ## App Details
 
-- **App URL**: [Currency Exchange App](https://currency-exchange-sh.netlify.app)
+- **App URL**: [Currency Exchange App](https://mm-currency-exchange-app.vercel.app)
 - **GitHub Repository**: [currency-exchange-app](https://github.com/SaiHtetWaiYan/currency-exchange-app)
 
 ## Screenshots
