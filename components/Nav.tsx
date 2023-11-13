@@ -8,7 +8,7 @@ export default function Nav() {
   return (
     <header className="w-full shadow-sm ">
       <div className="container flex flex-col items-start justify-between p-6 mx-auto md:flex-row">
-        <nav className="flex flex-wrap items-center justify-center space-x-6 lg:space-x-8 md:pl-0 pl-28 text-base md:ml-auto md:mr-auto">
+        <nav className="flex flex-wrap items-center justify-center space-x-6 lg:space-x-8 md:pl-0 pl-24 text-base md:ml-auto md:mr-auto">
           <Link
             href="/"
             className={`text-md font-medium transition-colors hover:text-primary ${
