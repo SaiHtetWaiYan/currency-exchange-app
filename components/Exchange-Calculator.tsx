@@ -8,11 +8,12 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import React, { useState } from "react";
-const ExchangeCalculator = ({ data }: any) => {
-  const [selectedCurrency, setSelectedCurrency] = useState<String>();
+import React, { useState, useEffect } from "react";
+const ExchangeCalculator = ({ data, isCBM }: any) => {
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("");
   const [rate, setRate] = useState<number>(0);
   const [amount, setAmount] = useState<number>(0);
+
   const onChange = (value: string) => {
     setSelectedCurrency(value);
     if (
@@ -34,6 +35,15 @@ const ExchangeCalculator = ({ data }: any) => {
       setAmount(Number(input));
     }
   };
+
+  useEffect(() => {
+    setSelectedCurrency("");
+    setRate(0);
+    setAmount(0);
+  }, [isCBM]);
+
+  const selectKey = isCBM ? "cbmKey" : "nonCbmKey";
+
   return (
     <Card className="sm:w-full md:w-1/2">
       <CardHeader>
@@ -42,17 +52,19 @@ const ExchangeCalculator = ({ data }: any) => {
       <CardContent>
         <div className="flex flex-col sm:flex-row gap-2">
           <div className="sm:w-full md:w-1/2">
-            <Select name="currency" onValueChange={onChange}>
+            <Select key={selectKey} name="currency" onValueChange={onChange}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Currency" />
               </SelectTrigger>
 
               <SelectContent className="max-h-48 overflow-y-auto">
-                {Object.entries(data.rates).map(([currency]) => (
-                  <SelectItem key={currency} value={currency}>
-                    {currency}
-                  </SelectItem>
-                ))}
+                {data &&
+                  data.rates &&
+                  Object.entries(data.rates).map(([currency]) => (
+                    <SelectItem key={currency} value={currency}>
+                      {currency}
+                    </SelectItem>
+                  ))}
               </SelectContent>
             </Select>
           </div>
